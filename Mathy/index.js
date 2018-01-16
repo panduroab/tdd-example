@@ -4,6 +4,25 @@ module.exports = () => {
             return new Promise((resolve, reject) => {
                 return resolve(200);
             });
+        },
+        sum: (number1, number2) => {
+            return new Promise((resolve, reject) => {
+                return resolve(number1 + number2);
+            });
+        },
+        div: (number1, number2) => {
+            return new Promise((resolve, reject) => {
+                return resolve(number1 / number2);
+            });
+        },
+        addArray: (arr) => {
+            return new Promise((resolve, reject) => {
+                let x = 0;
+                for (let i=0; i<arr.length; i++) {
+                    x += Number(arr[i]);
+                }
+                return resolve(x);
+            });
         }
     }
 };
