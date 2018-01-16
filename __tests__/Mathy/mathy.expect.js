@@ -11,7 +11,7 @@ describe('Math example', () => {
             .then(res => {
                 //Assert
                 try {
-                    assert.equal(res, 200);
+                    assert.equal(res, arg1*arg2);
                     done();
                 } catch (err) {
                     done(err)
