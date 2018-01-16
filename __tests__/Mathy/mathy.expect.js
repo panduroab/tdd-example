@@ -7,7 +7,7 @@ describe('Math example', () => {
         //Arrange
         let mathy = Mathy();
         //Action
-        mathy.multiply(100, 2)
+        mathy.multiply(arg1,arg2)
             .then(res => {
                 //Assert
                 try {
