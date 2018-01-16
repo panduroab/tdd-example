@@ -7,11 +7,11 @@ describe('Math example', () => {
         //Arrange
         let mathy = Mathy();
         //Action
-        mathy.multiply(100, 2)
+        mathy.multiply(arg1,arg2)
             .then(res => {
                 //Assert
                 try {
-                    assert.equal(res, 200);
+                    assert.equal(res, arg1*arg2);
                     done();
                 } catch (err) {
                     done(err)
