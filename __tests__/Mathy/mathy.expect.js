@@ -2,7 +2,7 @@ const Mathy = require('../../Mathy');
 const assert = require('chai').assert;
 
 describe('Math example', () => {
-    let arg1=10,arg2=12;
+    let arg1 = 10, arg2 = 12;
     it('should multiply tow numbers', done => {
         //Arrange
         let mathy = Mathy();
@@ -19,17 +19,17 @@ describe('Math example', () => {
             })
             .catch(done);
     });
-    it('Should add two numbers',done=>{
+    it('Should add two numbers', done => {
         //Arrange
         let mathy = Mathy();
         //Action
-        mathy.add(arg1,arg2)
-            .then(res=>{
+        mathy.add(arg1, arg2)
+            .then(res => {
                 //Assert
-                try{
-                    assert.equal(res,arg1+arg2);
+                try {
+                    assert.equal(res, arg1 + arg2);
                     done();
-                }catch(err){
+                } catch (err) {
                     done(err);
                 }
             })
@@ -38,7 +38,7 @@ describe('Math example', () => {
     it('should add all numbers of array', done => {
         //arrange
         let mathy = Mathy();
-        let arr = [1,4,3,4];
+        let arr = [1, 4, 3, 4];
         //action
         mathy.addArray(arr)
             .then(res => {
@@ -46,18 +46,18 @@ describe('Math example', () => {
                     assert.equal(res, 12);
                     done();
                 } catch (err) {
-                        done(err);
+                    done(err);
                 }
             })
             .catch(done);
     });
 
-    it ('should substract two numbers', done => {
+    it('should substract two numbers', done => {
         //Arrange
         let mathy = Mathy();
         //Action
-        mathy.substract(100,50)
-            .then(res=>{
+        mathy.substract(100, 50)
+            .then(res => {
                 //Assert
                 try {
                     assert.equal(res, 50);
@@ -85,5 +85,21 @@ describe('Math example', () => {
             })
             .catch(done);
     });
- 
+
+    it("should chain math opperations", done => {
+        let mathy = Mathy();
+        mathy.add(1, 2)
+            .then(res => mathy.multiply(res, 2))
+            .then(res => mathy.divide(res, 2))
+            .then(res =>{
+                try {
+                    assert.equal(res, 3);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            })
+            .catch(done);
+    });
+
 });
