@@ -13,6 +13,7 @@ module.exports = () => {
                 }
                 return resolve(x);
             });
-        }
+        },
+        divide: (number1, number2) => new Promise((resolve, reject) => resolve(number1 / number2))
     }
 };

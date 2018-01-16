@@ -34,4 +34,21 @@ describe('Math example', () => {
             })
             .catch(done);
     });
+    // Division -----------------------------------------------------------------------------------
+    it('should divide two numbers', done => {
+        let tests = [
+            { num1: 100, num2: 2, expected: 50 }
+        ];
+        let mathy = Mathy();
+        mathy.divide(tests[0].num1, tests[0].num2)
+            .then(res => {
+                try {
+                    assert.equal(res, tests[0].expected);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            })
+            .catch(done);
+    });
 });
