@@ -4,6 +4,12 @@ module.exports = () => {
             return new Promise((resolve, reject) => {
                 return resolve(200);
             });
+        }, 
+
+        substract: (number1, number2) => {
+            return new Promise((resolve, reject) => {
+                return resolve(number1 - number2);
+            });
         },
         addArray: (arr) => {
             return new Promise((resolve, reject) => {

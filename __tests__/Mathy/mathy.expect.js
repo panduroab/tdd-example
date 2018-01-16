@@ -29,6 +29,23 @@ describe('Math example', () => {
                     assert.equal(res, 12);
                     done();
                 } catch (err) {
+                        done(err);
+                }
+            })
+            .catch(done);
+    });
+
+    it ('should substract two numbers', done => {
+        //Arrange
+        let mathy = Mathy();
+        //Action
+        mathy.substract(100,50)
+            .then(res=>{
+                //Assert
+                try {
+                    assert.equal(res, 50);
+                    done();
+                } catch (err) {
                     done(err);
                 }
             })
@@ -51,4 +68,5 @@ describe('Math example', () => {
             })
             .catch(done);
     });
+ 
 });
