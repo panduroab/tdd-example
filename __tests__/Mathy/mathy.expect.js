@@ -18,4 +18,20 @@ describe('Math example', () => {
             })
             .catch(done);
     });
+    it('should add all numbers of array', done => {
+        //arrange
+        let mathy = Mathy();
+        let arr = [1,4,3,4];
+        //action
+        mathy.addArray(arr)
+            .then(res => {
+                try {
+                    assert.equal(res, 12);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            })
+            .catch(done);
+    });
 });
