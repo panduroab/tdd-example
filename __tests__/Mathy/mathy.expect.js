@@ -70,14 +70,12 @@ describe('Math example', () => {
     });
     // Division -----------------------------------------------------------------------------------
     it('should divide two numbers', done => {
-        let tests = [
-            { num1: 100, num2: 2, expected: 50 }
-        ];
+        let testValues = { num1: 100, num2: 2, expected: 50 };
         let mathy = Mathy();
-        mathy.divide(tests[0].num1, tests[0].num2)
+        mathy.divide(testValues.num1, testValues.num2)
             .then(res => {
                 try {
-                    assert.equal(res, tests[0].expected);
+                    assert.equal(res, testValues.expected);
                     done();
                 } catch (err) {
                     done(err);
@@ -85,5 +83,4 @@ describe('Math example', () => {
             })
             .catch(done);
     });
- 
 });
